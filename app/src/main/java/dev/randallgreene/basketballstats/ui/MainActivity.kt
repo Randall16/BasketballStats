@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val doc = Jsoup.parse(f, null, f.toString())
 
         val regular = HtmlParser.parsePlayerSeasonsPerGame(doc)
-        val post = HtmlParser.parsePlayerPlayoffsPerGame(doc)
+        val post = HtmlParser.parsePlayerPlayoffsPerGame(doc) // not working
 
         Log.v("hehehe", regular.toString())
         Log.v("hehehe", post.toString())
