@@ -6,5 +6,6 @@ package dev.randallgreene.basketballstats.data.parsing
 object HtmlTags {
 
     const val PLAYER_PER_GAME_TABLE = "per_game"
+    const val PLAYER_DIRECTORY_TABLE = "players"
 
 }
