@@ -18,21 +18,6 @@ object HtmlParser {
         // using "tbody" because table has additional unneeded info in the "tfoot" section
         val table = doc.select(query).select("tbody")
 
-       return parsePerGamesTable(table)
-    }
-
-    // same as function above but pass playofftable in instead
-    fun parsePlayerPlayoffsPerGame(doc: Document): List<SeasonPerGame> {
-
-        // create query string to locate table in html doc
-        val query = convertToQuery( HtmlTags.PLAYER_PLAYOFFS_PER_GAME_TABLE )
-
-        // select that table from the html doc
-        // using "tbody" because table has additional unneeded info in the "tfoot" section
-        val table = doc.select(query).select("tbody")
-
-        Log.v("hehehe", query)
-
         return parsePerGamesTable(table)
     }
 

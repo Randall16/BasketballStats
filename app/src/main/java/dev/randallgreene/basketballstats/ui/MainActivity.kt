@@ -17,13 +17,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // for testing
-        val f = baseContext!!.assets.open(file)
+        val r = Thread(Runnable {
+
+            val doc = Jsoup.connect("https://www.basketball-reference.com/players/n/nashst01.html").get()
+
+            val regular = HtmlParser.parsePlayerSeasonsPerGame(doc)
+
+
+            Log.v("hehehe", regular.toString())
+
+        })
+
+        r.start()
+
+        /*val f = baseContext!!.assets.open(file)
         val doc = Jsoup.parse(f, null, f.toString())
 
         val regular = HtmlParser.parsePlayerSeasonsPerGame(doc)
-        val post = HtmlParser.parsePlayerPlayoffsPerGame(doc) // not working
+        val post = HtmlParser.parsePlayerPlayoffsPerGame(doc) //  not working
 
         Log.v("hehehe", regular.toString())
-        Log.v("hehehe", post.toString())
+        Log.v("hehehe", post.toString())*/
     }
 }
