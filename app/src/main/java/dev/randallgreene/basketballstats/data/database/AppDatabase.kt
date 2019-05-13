@@ -8,6 +8,8 @@ import androidx.room.RoomDatabase
 @Database(entities = [PlayerEntry::class], version = 1 )
 abstract class AppDatabase : RoomDatabase() {
 
+    abstract fun playersDao(): PlayersDao
+
     // Singleton instantiation
     companion object {
 
